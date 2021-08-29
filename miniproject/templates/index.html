@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>index</title>
+</head>
+<body>
+{% for key,val in content.items %}
+{% for h in val %}
+<p> {{h}} </p>
+{% endfor %}
+{% endfor %}
+</body>
+</html>
