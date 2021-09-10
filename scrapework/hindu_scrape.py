@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 re=requests.get("https://www.thehindu.com/news/national/")
 su=BeautifulSoup(re.text,'html5lib')
 
-hdings1=su.findAll("div",{"class":"33_1x_OtherStoryCard mobile-padding"},limit=6)
+hdings1=su.findAll("div",{"class":"33_1x_OtherStoryCard mobile-padding"})
 hdings2=su.findAll("div",{"class":"tc1-slide slick-slide"})
 lis1=[]
 lis2=[]

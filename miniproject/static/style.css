@@ -1,0 +1,71 @@
+* {
+  font-family: sans-serif;
+}
+
+nav, .product, .text {
+  max-width: 800px;
+  margin: auto;
+}
+/*Nav*/
+nav {
+  margin: 56px auto 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.nav__link {
+  color: #aaa;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 8px 16px;
+  transition: color 0.5s ease;
+}
+.nav__link:hover {
+  color: #555
+}
+.nav__link-active {
+  color: #555;
+  border-bottom: 2px solid #545454;
+}
+
+/*Product*/
+
+.article{
+      background: blueviolet;
+    position: relative;
+    left: 1%;
+    display: inline-block;
+    width: 44%;
+    height: 20%;
+    border-radius: 10px;
+}
+
+.article img{
+    position: relative;
+    left: 6%;
+    top: 14px;
+}
+
+.maincontent{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 75%;
+    overflow: scroll;
+}
+.maincontent::-webkit-scrollbar {
+  width: 2px;
+}
+ 
+.maincontent::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.maincontent::-webkit-scrollbar-thumb {
+  background-color: blueviolet;
+  outline: 1px solid slategrey;
+}

@@ -1,14 +1,43 @@
+
+
+
 <!DOCTYPE html>
 <html>
+{% load static %}
 <head>
+	
 	<meta charset="utf-8">
 	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
-{% for key,val in content.items %}
-{% for h in val %}
-<p> {{h}} </p>
-{% endfor %}
-{% endfor %}
+<main>
+
+  <nav>
+    <a href="#" class="nav__link">Science and Technology</a>
+    <a href="#" class="nav__link nav__link-active">News</a>
+    <a href="#" class="nav__link">History</a>
+  </nav>
+
+  <!------>
+<div class="maincontent">
+  {% for key,val in content.items %}
+  {% with name=val.2 %}
+  
+
+    <div class="article">
+      <img width="300px" height="200px" src="{{name}}" alt="Logistics icon" class="product__item__image">
+      <p class="product__item__text">{{val.0}}<a href="{{val.1}}">Click here to Summarize</a></p><br>
+      
+    </div>
+    <!---->
+
+
+  {% endwith %}
+  {% endfor %}
+
+</div>
+
+</main>
 </body>
 </html>
