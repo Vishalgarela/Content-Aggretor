@@ -49,6 +49,23 @@ nav {
     top: 14px;
 }
 
+.news{
+          background-color:lightslategrey;
+    width: 100%;
+    position: relative;
+    height: 64%;
+    border-radius: 10px;
+    top: 0%;
+}
+.news p{
+              border-radius: 5px;
+    position: relative;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    width: auto;
+    color: aliceblue;
+}
 .maincontent{
     position: absolute;
     top: 20%;
@@ -56,9 +73,11 @@ nav {
     width: 80%;
     height: 75%;
     overflow: scroll;
+    overflow-x: hidden
 }
 .maincontent::-webkit-scrollbar {
   width: 2px;
+
 }
  
 .maincontent::-webkit-scrollbar-track {
@@ -68,4 +87,18 @@ nav {
 .maincontent::-webkit-scrollbar-thumb {
   background-color: blueviolet;
   outline: 1px solid slategrey;
+}
+
+.carousel-inner .active.left { left: -25%; }
+.carousel-inner .next        { left:  25%; }
+.carousel-inner .prev    { left: -25%; }
+.carousel-control        { width:  4%; }
+.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
+
+.col-md-offset-3{
+      width: 100%;
+    position: relative;
+    top: 0%;
+    margin-left: 0%;
+
 }
