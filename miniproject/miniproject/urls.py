@@ -19,6 +19,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('',include('cagg.urls')),
+    path('history',include('cagg.urls')),
     path('adminmy/', admin.site.urls),
 ]
 
