@@ -1,16 +1,6 @@
-import requests
-import json
-
-
-
-try:
-	from googlesearch import search
-except ImportError:
-	print("No module named 'google' found")
-
 #importing libraries
 import nltk
-
+import requests
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize, sent_tokenize
@@ -111,26 +101,3 @@ def _run_article_summary(article):
 
     
     
-
-def historyy(textgiven):
-	
-	textgiven+=" wikipedia"
-	mainlink=""
-	for j in search(textgiven, tld="co.in", num=10, stop=10, pause=2):
-		mainlink+=j
-		break
-
-	re=requests.get(mainlink)
-	su=BeautifulSoup(re.text,'html5lib')
-
-	hdings1=su.findAll("div",{"class":"mw-body-content mw-content-ltr"})
-	para=hdings1[0].find("div",{"class":"mw-parser-output"})
-	p=para.findAll('p')
-	s=""
-	for x in p:
-		s+=x.text
-	
-	summary_text=_run_article_summary(s)
-	cont={"his":summary_text}
-	return cont
-	

@@ -5,9 +5,11 @@
 	<title>History</title>
 </head>
 <body>
-<input type="text" name="">
-{% for key,val in content.items %}
-<p>{{val}}</p>
-{% endfor %}
+	<form action="summaryy" method="post">{% csrf_token %}
+		<label>Enter here</label>
+		<input type="text" name="intext">
+	
+	</form>
+
 </body>
 </html>
