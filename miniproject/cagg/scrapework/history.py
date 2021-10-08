@@ -25,7 +25,7 @@ def _create_dictionary_table(text_string) -> dict:
    
     #removing stop words
     stop_words = set(stopwords.words("english"))
-    
+
     words = word_tokenize(text_string)
     #reducing words to their root form
     stem = PorterStemmer()
