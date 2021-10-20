@@ -85,31 +85,19 @@ $('.carousel .item').each(function(){
     </div>
       
     
-    {% set cnt=4 %}
     {% for i in n %}
-<div class="item">
-      <div class="col-xs-3"><a href="{{content|link:cnt}}"><img src="{{content|image:cnt}}" class="img-responsive"></a>
-      <p>{{content|title:cnt}}</p>
-      </div>
-      {% set cnt=cnt+1 %}
-      
-      
-      <div class="col-xs-3"><a href="{{content|link:cnt}}"><img src="{{content|image:cnt}}" class="img-responsive"></a>
-      <p>{{content|title:cnt}}</p>
-      </div>
-
-      <div class="col-xs-3"><a href="{{content|link:}}"><img src="{{content|image:cnt}}" class="img-responsive"></a>
-      <p>{{content|title:cnt}}</p>
-      </div>
-     
-      <div class="col-xs-3"><a href="{{content|link:cnt}}"><img src="{{content|image:cnt}}" class="img-responsive"></a>
-      <p>{{content|title:cnt}}</p>
-      </div>
-     
-      </div>
     
+<div class="item">
+  {% for cnt in nn %}
+      <div class="col-xs-3"><a href="{% link content i cnt %}"><img src="{% image content i cnt %}" class="img-responsive"></a>
+      <p>{% title content i cnt %}</p>
+      </div>
+      
+      
     {% endfor %}
-    {% endwith %}
+    </div>
+    {% endfor %}
+    
   
 
 

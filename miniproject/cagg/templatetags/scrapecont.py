@@ -1,17 +1,17 @@
 from django import template
 register = template.Library()
 
-@register.filter
-def title(value, key):
-	ss=str(key)
-	return value[ss][0]
+@register.simple_tag
+def title(value,cnt, key):
+	sc=str((cnt+1)*4+key)
+	return value[sc][0]
 
-@register.filter
-def link(value, key):
-	ss=str(key)
-	return value[ss][1]
+@register.simple_tag
+def link(value,cnt, key):
+	sc=str((cnt+1)*4+key)
+	return value[sc][1]
 
-@register.filter
-def image(value, key):
-	ss=str(key)
-	return value[ss][2]
+@register.simple_tag
+def image(value,cnt, key):
+	sc=str((cnt+1)*4+key)
+	return value[sc][2]

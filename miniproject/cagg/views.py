@@ -21,5 +21,5 @@ def index(request):
 	ll=int(len(sports()))
 	ll=ll-4
 	nll=int(ll/4)
-	return render(request,'index.html',{"content":sports(),"n":range(nll),"maxx":nll*4})
+	return render(request,'index.html',{"content":sports(),"n":range(nll),"nn":range(4)})
 
