@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
+{% load scrapecont %}
 <head>
 	
 	<meta charset="utf-8">
@@ -69,27 +70,50 @@ $('.carousel .item').each(function(){
 <div class="carousel slide" id="myCarousel" data-ride="carousel" data-interval="2000" data-pause="hover">
   <div class="carousel-inner">
     <div class="item active">
-      
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/e477e4/fff&amp;text=2" class="img-responsive"></a></div>
+      <div class="col-xs-3"><a href="{{content.0.1}}"><img src="{{content.0.2}}" class="img-responsive"></a>
+        <p>{{content.0.0}}</p>
       </div>
-      
-    {% for key,val in content.items %}
-
-
-    
-     
-
-    
-<div class="item">
-      <div class="col-xs-3"><a href="#"><img src="{{val.2}}" class="img-responsive"></a></div>
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a></div>
-      <div class="col-xs-3"><a href="#"><img src="http://placehold.it/500/eeeeee&amp;text=3" class="img-responsive"></a></div>
+      <div class="col-xs-3"><a href="{{content.1.1}}"><img src="{{content.1.2}}" class="img-responsive"></a>
+        <p>{{content.1.0}}</p>
+      </div>  
+      <div class="col-xs-3"><a href="{{content.2.1}}"><img src="{{content.2.2}}" class="img-responsive"></a>
+        <p>{{content.2.0}}</p>
+      </div>  
+      <div class="col-xs-3"><a href="{{content.3.1}}"><img src="{{content.3.2}}" class="img-responsive"></a>
+        <p>{{content.3.0}}</p>
+      </div>      
     </div>
+      
     
+    {% set cnt=4 %}
+    {% for i in n %}
+<div class="item">
+      <div class="col-xs-3"><a href="{{content|link:cnt}}"><img src="{{content|image:cnt}}" class="img-responsive"></a>
+      <p>{{content|title:cnt}}</p>
+      </div>
+      {% set cnt=cnt+1 %}
+      
+      
+      <div class="col-xs-3"><a href="{{content|link:cnt}}"><img src="{{content|image:cnt}}" class="img-responsive"></a>
+      <p>{{content|title:cnt}}</p>
+      </div>
 
+      <div class="col-xs-3"><a href="{{content|link:}}"><img src="{{content|image:cnt}}" class="img-responsive"></a>
+      <p>{{content|title:cnt}}</p>
+      </div>
+     
+      <div class="col-xs-3"><a href="{{content|link:cnt}}"><img src="{{content|image:cnt}}" class="img-responsive"></a>
+      <p>{{content|title:cnt}}</p>
+      </div>
+     
+      </div>
+    
     {% endfor %}
-   
-  </div>
+    {% endwith %}
+  
+
+
+ </div>
   <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
   <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
