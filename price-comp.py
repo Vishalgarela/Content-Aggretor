@@ -2,11 +2,11 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-checkin="samsung+m12"
+checkin=str(input())
 HEADERS = ({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64)AppleWebKit/537.36 (KHTML, like Gecko)Chrome/44.0.2403.157 Safari/537.36',
             'Accept-Language': 'en-US, en;q=0.5'})
 flipkart=requests.get("https://www.flipkart.com/search?q="+checkin,headers=HEADERS)
-amazon=requests.get("https://www.amazon.in/s?k=samsung+m12&ref=nb_sb_noss_2",headers=HEADERS)
+amazon=requests.get("https://www.amazon.in/s?k="+checkin+"&ref=nb_sb_noss_2",headers=HEADERS)
 
 
 fsu=BeautifulSoup(flipkart.text,'html5lib')

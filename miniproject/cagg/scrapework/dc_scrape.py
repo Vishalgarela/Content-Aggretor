@@ -2,47 +2,47 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-re=requests.get("https://www.deccanchronicle.com/")
-su=BeautifulSoup(re.text,'html5lib')
 
-hdings1=su.findAll("div",{"class":"col-sm-3 col-xs-12 tstry-feed-sml-a"})
-hdings2=su.findAll("div",{"class":"col-sm-12 col-xs-12 tstry-feed-sml-a"})
+def dcnews():
+		re=requests.get("https://www.deccanchronicle.com/")
+		su=BeautifulSoup(re.text,'html5lib')
 
-lis1=[]
-lis2=[]
-for x in hdings1:
-	lis1.append(x)
-for x in hdings2:
-	lis2.append(x)
+		hdings1=su.findAll("div",{"class":"col-sm-3 col-xs-12 tstry-feed-sml-a"})
+		hdings2=su.findAll("div",{"class":"col-sm-12 col-xs-12 tstry-feed-sml-a"})
+
+		lis1=[]
+		
+		for x in hdings2:
+			lis1.append(x)
+		
 
 
 
-further1=[]
-further2=[]
-for x in lis1:
-	further1.append(x.find("a"))
+		further1=[]
+		
+		for x in lis1:
+			further1.append(x.find("a"))
 
-for x in lis2:
-	further2.append(x.find("a"))
+		
 
-#data of top stories
-for x in further2:
-	print("link: "+x.get("href")+'\n') #this link is to be concatinated by home link
-	tt=x.find("h3")
-	print(tt.text+'\n')
-	im=x.find("img")
-	print(im.get("data-src")+'\n')
-	print(im.get("title")+'\n')
-	print('**'*50)
+		#data of top stories
+		cont={}
+		g=0
+		for x in further1:
+			li=[]
+			
+			im=x.find("img")
+			li.append(im.get("title"))
+			li.append("https://www.deccanchronicle.com"+x.get("href"))
+			li.append(im.get("data-src"))
+			
+			ss=str(g)
+			cont[ss]=li
+			g+=1
 
-for x in further1:
-	tt=x.find("h3")
-	print(tt.text+'\n')
-	im=x.find("img")
-	print(im.get("data-src")+'\n')
-	print(im.get("title")+'\n')
-	print('**'*50)
+		
 
+		return cont
 
 
 

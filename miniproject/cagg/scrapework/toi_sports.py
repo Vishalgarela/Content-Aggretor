@@ -28,7 +28,7 @@ def sports():
 			cont[s]=lii
 			cnt+=1
 		except Exception as ee:
-			print(ee)
+			print("")
 
 	return cont
 

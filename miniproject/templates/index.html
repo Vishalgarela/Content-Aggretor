@@ -54,8 +54,8 @@ $('.carousel .item').each(function(){
 <main>
 
   <nav>
-    <a href="#" class="nav__link">Science and Technology</a>
-    <a href="#" class="nav__link nav__link-active">News</a>
+    <a href="#" class="nav__link">Price Comparision</a>
+    <a href="/" class="nav__link nav__link-active">News</a>
     <a href="#" class="nav__link">History</a>
   </nav>
 
@@ -63,34 +63,35 @@ $('.carousel .item').each(function(){
  
 <div class="maincontent">
 
-  <div class="news">
-    <p>THE Hindu</p>
+<div class="news">
+    <p>Deccan Chronicle</p>
     
    <div class="col-md-6 col-md-offset-3">
-<div class="carousel slide" id="myCarousel" data-ride="carousel" data-interval="2000" data-pause="hover">
+<div class="carousel slide" id="ctwo" data-ride="carousel" data-interval="2000" data-pause="hover">
   <div class="carousel-inner">
     <div class="item active">
-      <div class="col-xs-3"><a href="{{content.0.1}}"><img src="{{content.0.2}}" class="img-responsive"></a>
-        <p>{{content.0.0}}</p>
+      <div class="col-xs-3"><a href="{{dc.0.1}}"><img src="{{dc.0.2}}" class="img-responsive"></a>
+        <p>{{dc.0.0}}</p>
       </div>
-      <div class="col-xs-3"><a href="{{content.1.1}}"><img src="{{content.1.2}}" class="img-responsive"></a>
-        <p>{{content.1.0}}</p>
-      </div>  
-      <div class="col-xs-3"><a href="{{content.2.1}}"><img src="{{content.2.2}}" class="img-responsive"></a>
-        <p>{{content.2.0}}</p>
-      </div>  
-      <div class="col-xs-3"><a href="{{content.3.1}}"><img src="{{content.3.2}}" class="img-responsive"></a>
-        <p>{{content.3.0}}</p>
-      </div>      
+      <div class="col-xs-3"><a href="{{dc.1.1}}"><img src="{{dc.1.2}}" class="img-responsive"></a>
+        <p>{{dc.1.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{dc.2.1}}"><img src="{{dc.2.2}}" class="img-responsive"></a>
+        <p>{{dc.2.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{dc.3.1}}"><img src="{{dc.3.2}}" class="img-responsive"></a>
+        <p>{{dc.3.0}}</p>
+      </div>
+           
     </div>
       
     
-    {% for i in n %}
+    {% for x in ndc %}
     
 <div class="item">
   {% for cnt in nn %}
-      <div class="col-xs-3"><a href="{% link content i cnt %}"><img src="{% image content i cnt %}" class="img-responsive"></a>
-      <p>{% title content i cnt %}</p>
+      <div class="col-xs-3"><a href="{% link dc x cnt %}"><img src="{% image dc x cnt %}" class="img-responsive"></a>
+      <p>{% title dc x cnt %}</p>
       </div>
       
       
@@ -102,21 +103,152 @@ $('.carousel .item').each(function(){
 
 
  </div>
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+  <a class="left carousel-control" href="#ctwo" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+  <a class="right carousel-control" href="#ctwo" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+</div>
+</div>
+  </div>
+
+  <br>
+  <div class="news">
+    <p>Sports</p>
+    
+   <div class="col-md-6 col-md-offset-3">
+<div class="carousel slide" id="cth" data-ride="carousel" data-interval="2000" data-pause="hover">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="col-xs-3"><a href="{{content.0.1}}"><img src="{{content.0.2}}" class="img-responsive"></a>
+        <p>{{content.0.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{content.1.1}}"><img src="{{content.1.2}}" class="img-responsive"></a>
+        <p>{{content.1.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{content.2.1}}"><img src="{{content.2.2}}" class="img-responsive"></a>
+        <p>{{content.2.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{content.3.1}}"><img src="{{content.3.2}}" class="img-responsive"></a>
+        <p>{{content.3.0}}</p>
+      </div>
+      
+           
+    </div>
+      
+    
+    {% for x in n %}
+    
+<div class="item">
+  {% for cnt in nn %}
+      <div class="col-xs-3"><a href="{% link content x cnt %}"><img src="{% image content x cnt %}" class="img-responsive"></a>
+      <p>{% title content x cnt %}</p>
+      </div>
+      
+      
+    {% endfor %}
+    </div>
+    {% endfor %}
+    
+  
+
+
+ </div>
+  <a class="left carousel-control" href="#cth" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+  <a class="right carousel-control" href="#cth" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
   </div>
   <br>
-  <div class="news">
-    <p>Times of India</p>
+<div class="news">
+    <p>THE Hindu</p>
+    
+   <div class="col-md-6 col-md-offset-3">
+<div class="carousel slide" id="cthree" data-ride="carousel" data-interval="2000" data-pause="hover">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="col-xs-3"><a href="{{hin.0.1}}"><img src="{{hin.0.2}}" class="img-responsive"></a>
+        <p>{{hin.0.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{hin.1.1}}"><img src="{{hin.1.2}}" class="img-responsive"></a>
+        <p>{{hin.1.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{hin.2.1}}"><img src="{{hin.2.2}}" class="img-responsive"></a>
+        <p>{{hin.2.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{hin.3.1}}"><img src="{{hin.3.2}}" class="img-responsive"></a>
+        <p>{{hin.3.0}}</p>
+      </div>
+           
+    </div>
+      
+    
+    {% for i in nhi %}
+    
+<div class="item">
+  {% for cnt in nn %}
+      <div class="col-xs-3"><a href="{% link hin i cnt %}"><img src="{% image hin i cnt %}" class="img-responsive"></a>
+      <p>{% title hin i cnt %}</p>
+      </div>
+      
+      
+    {% endfor %}
+    </div>
+    {% endfor %}
+    
+  
+
+
+ </div>
+  <a class="left carousel-control" href="#cthree" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+  <a class="right carousel-control" href="#cthree" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+</div>
+</div>
   </div>
   <br>
+
   <div class="news">
-    <p></p>
-  </div><br>
-  <div class="news">
-    <p></p>
+    <p>Business</p>
+    
+   <div class="col-md-6 col-md-offset-3">
+<div class="carousel slide" id="cfour" data-ride="carousel" data-interval="2000" data-pause="hover">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="col-xs-3"><a href="{{buis.0.1}}"><img src="" class="img-responsive"></a>
+        <p>{{buis.0.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{buis.1.1}}"><img src="" class="img-responsive"></a>
+        <p>{{buis.1.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{buis.2.1}}"><img src="" class="img-responsive"></a>
+        <p>{{buis.2.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{buis.3.1}}"><img src="" class="img-responsive"></a>
+        <p>{{buis.3.0}}</p>
+      </div>
+      
+           
+    </div>
+      
+    
+    {% for i in nbb %}
+    
+<div class="item">
+  {% for cnt in nn %}
+      <div class="col-xs-3"><a href="{% link buis i cnt %}"><img src="" class="img-responsive"></a>
+      <p>{% title buis i cnt %}</p>
+      </div>
+      
+      
+    {% endfor %}
+    </div>
+    {% endfor %}
+    
+  
+
+
+ </div>
+  <a class="left carousel-control" href="#cfour" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+  <a class="right carousel-control" href="#cfour" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+</div>
+</div>
   </div>
 
 </div>

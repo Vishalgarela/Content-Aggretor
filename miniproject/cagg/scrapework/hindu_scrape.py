@@ -2,26 +2,29 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-re=requests.get("https://www.thehindu.com/news/national/")
-su=BeautifulSoup(re.text,'html5lib')
 
-hdings1=su.findAll("div",{"class":"33_1x_OtherStoryCard mobile-padding"})
-hdings2=su.findAll("div",{"class":"tc1-slide slick-slide"})
-lis1=[]
-lis2=[]
-print(hdings2)
-for x in hdings1:
-	lis1.append(x)
-for x in hdings2:
-	lis2.append(x)
+def hindu():
+	re=requests.get("https://www.thehindu.com")
+	su=BeautifulSoup(re.text,'html5lib')
 
-for x in lis2:
-	h5=x.find("h5")
-	link=h5.find("a")
-	print("link:"+link.get("href")+'\n')
-	print(link.text)
+	hdings1=su.findAll("div",{"class":"50_1x_StoryCard mobile-padding"})
+	ls=[]
+	cont={}
+	
+	for x in hdings1:
+		g=x.find("div",{"class":"story-card"})
+		ls.append(g)
+	g=0
+	for x in ls:
+		link=x.find('a')
+		img=link.find('img')
+		li=[]
+		li.append(img.get("title"))
+		li.append(link.get("href"))
+		li.append(img.get("data-src-template"))
+		ss=str(g)
+		cont[ss]=li
+		g=g+1
 
-for x in lis1:
-	link=x.find("a")
-	print(link.text+'\n')
-	print(link.get("href"))
+	return cont
+		
