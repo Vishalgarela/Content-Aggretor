@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
 <head>
 	<meta charset="utf-8">
 	<title>History</title>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script type="text/javascript">
+	function toggleShow () {
+  var el = document.getElementById("box");
+  el.classList.toggle("show");
+}
+function hid(){
+document.querySelectorAll('form')[0].style.visibility = 'hidden';
+
+}
+</script>
+
 </head>
 <body>
+	<a href="/"><p class="mainheading">Content Aggregator</p></a>
+	<br>
 	<form action="" method="post">{% csrf_token %}
-		<label>Enter here</label>
+		<!-- <label>Enter here</label>
 		<input type="text" name="intext">
-		<input type="submit" value="submit">
+		<input type="submit" value="submit"> -->
+<div class="container">
+<input type="text" id="box" placeholder="Search TO Summarize" class="search__box" name="intext">
+ <i class="fas fa-search search__icon" id="icon" onclick="toggleShow()"></i>
+  </div>
+   <input type="submit" onclick="hid()" class="submitbtn">
 	</form>
+<div class="summary">
 <p>{{content.his}}</p>
+</div>
 </body>
 </html>

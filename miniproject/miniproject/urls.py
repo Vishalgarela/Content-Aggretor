@@ -22,5 +22,7 @@ urlpatterns = [
     path('history',include('cagg.urls')),
     path('summaryy',include('cagg.urls')),
     path('adminmy/', admin.site.urls),
+    path('price',include('cagg.urls')),
+
 ]
 

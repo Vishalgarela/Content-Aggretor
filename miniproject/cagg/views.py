@@ -12,6 +12,9 @@ from cagg.scrapework.dc_scrape import *
 from cagg.scrapework.hindu_scrape import *
 from cagg.scrapework.toi_business import *
 
+
+def price(request):
+	return render(request,'price.html')
 def history(request):
 	if request.method == "POST":
 		val=request.POST.get('intext')
