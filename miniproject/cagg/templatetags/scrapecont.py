@@ -15,3 +15,13 @@ def link(value,cnt, key):
 def image(value,cnt, key):
 	sc=str((cnt+1)*4+key)
 	return value[sc][2]
+
+@register.simple_tag
+def seokey(value,cnt):
+	c=str(cnt)
+	return value[c][0]
+
+@register.simple_tag
+def seoval(value,cnt):
+	c=str(cnt)
+	return value[c][1]

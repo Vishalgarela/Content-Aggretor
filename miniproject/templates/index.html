@@ -160,6 +160,53 @@ $('.carousel .item').each(function(){
   </div>
   <br>
 <div class="news">
+    <p>Business</p>
+    
+   <div class="col-md-6 col-md-offset-3">
+<div class="carousel slide" id="cthree" data-ride="carousel" data-interval="2000" data-pause="hover">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="col-xs-3"><a href="{{buis.0.1}}"><img src="{{buis.0.2}}" class="img-responsive"></a>
+        <p>{{buis.0.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{buis.1.1}}"><img src="{{buis.1.2}}" class="img-responsive"></a>
+        <p>{{buis.1.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{buis.2.1}}"><img src="{{buis.2.2}}" class="img-responsive"></a>
+        <p>{{buis.2.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{buis.3.1}}"><img src="{{buis.3.2}}" class="img-responsive"></a>
+        <p>{{buis.3.0}}</p>
+      </div>
+      
+           
+    </div>
+      
+    
+    {% for i in nbb %}
+    
+<div class="item">
+  {% for cnt in nn %}
+      <div class="col-xs-3"><a href="{% link buis i cnt %}"><img src="{% image buis i cnt %}" class="img-responsive"></a>
+      <p>{% title buis i cnt %}</p>
+      </div>
+      
+      
+    {% endfor %}
+    </div>
+    {% endfor %}
+    
+  
+
+
+ </div>
+  <a class="left carousel-control" href="#cthree" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+  <a class="right carousel-control" href="#cthree" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+</div>
+</div>
+  </div>
+  <br>
+<div class="news">
     <p>THE Hindu</p>
     
    <div class="col-md-6 col-md-offset-3">
@@ -207,35 +254,36 @@ $('.carousel .item').each(function(){
   <br>
 
 <div class="news">
-    <p>Business</p>
+    <p>NDTV</p>
     
    <div class="col-md-6 col-md-offset-3">
 <div class="carousel slide" id="cfour" data-ride="carousel" data-interval="2000" data-pause="hover">
   <div class="carousel-inner">
     <div class="item active">
-      <div class="col-xs-3"><a href="{{buis.0.1}}"><img src="" class="img-responsive"></a>
-        <p>{{buis.0.0}}</p>
+      <div class="col-xs-3"><a href="{{ndtv.0.1}}"><img src="{{ndtv.0.2}}" class="img-responsive"></a>
+        <p>{{ndtv.0.0}}</p>
       </div>
-      <div class="col-xs-3"><a href="{{buis.1.1}}"><img src="" class="img-responsive"></a>
-        <p>{{buis.1.0}}</p>
+      <div class="col-xs-3"><a href="{{ndtv.1.1}}"><img src="{{ndtv.1.2}}" class="img-responsive"></a>
+        <p>{{ndtv.1.0}}</p>
       </div>
-      <div class="col-xs-3"><a href="{{buis.2.1}}"><img src="" class="img-responsive"></a>
-        <p>{{buis.2.0}}</p>
+      <div class="col-xs-3"><a href="{{ndtv.2.1}}"><img src="{{ndtv.2.2}}" class="img-responsive"></a>
+        <p>{{ndtv.2.0}}</p>
       </div>
-      <div class="col-xs-3"><a href="{{buis.3.1}}"><img src="" class="img-responsive"></a>
-        <p>{{buis.3.0}}</p>
+      <div class="col-xs-3"><a href="{{ndtv.3.1}}"><img src="{{ndtv.3.2}}" class="img-responsive"></a>
+        <p>{{ndtv.3.0}}</p>
       </div>
+      
       
            
     </div>
       
     
-    {% for i in nbb %}
+    {% for i in ndtvrange %}
     
 <div class="item">
   {% for cnt in nn %}
-      <div class="col-xs-3"><a href="{% link buis i cnt %}"><img src="" class="img-responsive"></a>
-      <p>{% title buis i cnt %}</p>
+      <div class="col-xs-3"><a href="{% link ndtv i cnt %}"><img src="{% image ndtv i cnt %}" class="img-responsive"></a>
+      <p>{% title ndtv i cnt %}</p>
       </div>
       
       

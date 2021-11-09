@@ -3,39 +3,27 @@ import json
 from bs4 import BeautifulSoup
 
 def business():
-	re=requests.get("https://timesofindia.indiatimes.com/business")
-	su=BeautifulSoup(re.text,'html5lib')
+	re=requests.get("https://www.business-standard.com/")
+	su=BeautifulSoup(re.content,'html5lib')
 
-	hdings1=su.findAll("div",{"class":"top-newslist small"})
-	hdings1.pop(1)
+	stories=su.findAll("div",{"class","btm-section"})
+	article=stories[0].findAll("div",{"class":"article"})
 	
-
-	ul=hdings1[0].find('ul')
-	
-
-	lis1=[]
-	
-	for x in ul:
-		lis1.append(x)
-
-	
-
 	cont={}
-	cnt=0
-	for x in lis1:
-		try:
-			span=x.find('span')  #no images given in website 
-			link=span.find('a')
-			ss=str(cnt)
-			lii=[]
-			lii.append(link.get('title'))
-			lii.append(link.get('href'))
-			
-			cont[ss]=lii
-			cnt+=1 
-
-		except Exception as e:
-			continue
+	g=0
+	for x in article:
+		link=x.find("a")
+		im=link.find("img")
+		title=x.find("h2")
+		
+		li=[]
+		li.append(title.text.strip())
+		li.append("https://www.business-standard.com/"+link.get("href"))
+		li.append(im.get("src"))
+		ss=str(g)
+		cont[ss]=li
+		g+=1
+	
 	return cont
 
 
