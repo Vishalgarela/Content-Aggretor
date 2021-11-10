@@ -67,7 +67,7 @@ def price(request):
 def history(request):
 	if request.method == "POST":
 		val=request.POST.get('intext')
-		return render(request,'history.html',{"content":historyy(val)})
+		return render(request,'summary.html',{"content":historyy(val)})
 	return render(request,'history.html',{"content":" "})
 
 def index(request):

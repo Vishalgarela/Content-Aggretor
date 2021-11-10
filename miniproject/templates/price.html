@@ -40,6 +40,13 @@ document.querySelectorAll('form')[0].style.visibility = 'hidden';
 .box{
 border-color: black;
 }
+
+table th{
+    background-color: lightcyan;
+}
+table td{
+    background-color: lightgoldenrodyellow;
+}
 </style>
     
 	<meta charset="utf-8">
@@ -75,8 +82,13 @@ border-color: black;
     color: #fa983a;">
 	</form>
 
-    <table>
-        <tr><th>key</th><th>per</th></tr>
+    <table style="    position: absolute;
+    top: 40%;
+    left: 32%;
+    border-style: dashed;
+    border-color: orangered;
+    width: 500px;">
+        <tr><th>Keyword</th><th>Percentage</th></tr>
         {% for i in n %}
     <tr><td>{% seokey count i %}</td><td>{% seoval count i %}</td></tr>
         {% endfor %}
