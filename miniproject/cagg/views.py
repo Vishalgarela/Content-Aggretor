@@ -12,6 +12,8 @@ from cagg.scrapework.dc_scrape import *
 from cagg.scrapework.hindu_scrape import *
 from cagg.scrapework.seo import *
 from cagg.scrapework.ndtv import *
+from cagg.scrapework.tech import *
+
 import nltk
 import requests
 from nltk.corpus import stopwords
@@ -71,7 +73,9 @@ def history(request):
 	return render(request,'history.html',{"content":" "})
 
 def index(request):
-
+	techlen=int(len(tech()))
+	techlen=techlen-4
+	techll=int(techlen/4)
 	ndtvlen=int(len(ndtv()))
 	ndtvlen=ndtvlen-4
 	nddll=int(ndtvlen/4)
@@ -87,5 +91,5 @@ def index(request):
 	bb=int(len(business()))
 	bb=bb-4
 	nbuis=int(bb/4)
-	return render(request,'index.html',{"content":sports(),"n":range(nll),"nn":range(0,4),"dc":dcnews(),"ndc":range(dcl),"hin":hindu(),"nhi":range(hll),"buis":business(),"nbb":range(nbuis),"ndtv":ndtv(),"ndtvrange":range(nddll)})
+	return render(request,'index.html',{"content":sports(),"n":range(nll),"nn":range(0,4),"dc":dcnews(),"ndc":range(dcl),"hin":hindu(),"nhi":range(hll),"buis":business(),"nbb":range(nbuis),"ndtv":ndtv(),"ndtvrange":range(nddll),"tech":tech(),"ntech":range(techll)})
 

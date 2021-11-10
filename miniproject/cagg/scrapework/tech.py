@@ -26,10 +26,15 @@ def tech():
 		im=link.find('img')
 		lis.append(im.get("title"))
 		lis.append(link.get("href"))
-		lis.append(im.get("src"))
+		if(im.get("data-original")==None):
+			lis.append(im.get("src"))
+		else:
+			lis.append(im.get("data-original"))
+
 		ss=str(g)
 		cont[ss]=lis
 		g+=1
 
 	return cont
 
+tech()

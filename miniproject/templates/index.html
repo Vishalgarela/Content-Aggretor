@@ -300,6 +300,58 @@ $('.carousel .item').each(function(){
 </div>
 </div>
   </div>
+<br>
+
+
+<div class="news">
+    <p>Technology</p>
+    
+   <div class="col-md-6 col-md-offset-3">
+<div class="carousel slide" id="cfive" data-ride="carousel" data-interval="2000" data-pause="hover">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="col-xs-3"><a href="{{tech.0.1}}"><img src="{{tech.0.2}}" class="img-responsive"></a>
+        <p>{{tech.0.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{tech.1.1}}"><img src="{{tech.1.2}}" class="img-responsive"></a>
+        <p>{{tech.1.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{tech.2.1}}"><img src="{{tech.2.2}}" class="img-responsive"></a>
+        <p>{{tech.2.0}}</p>
+      </div>
+      <div class="col-xs-3"><a href="{{tech.3.1}}"><img src="{{tech.3.2}}" class="img-responsive"></a>
+        <p>{{tech.3.0}}</p>
+      </div>
+      
+      
+      
+           
+    </div>
+      
+    
+    {% for i in ntech %}
+    
+<div class="item">
+  {% for cnt in nn %}
+      <div class="col-xs-3"><a href="{% link tech i cnt %}"><img src="{% image tech i cnt %}" class="img-responsive"></a>
+      <p>{% title tech i cnt %}</p>
+      </div>
+      
+      
+    {% endfor %}
+    </div>
+    {% endfor %}
+    
+  
+
+
+ </div>
+  <a class="left carousel-control" href="#cfive" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+  <a class="right carousel-control" href="#cfive" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+</div>
+</div>
+  </div>
+
 
 </div>
 
