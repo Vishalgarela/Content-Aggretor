@@ -14,6 +14,8 @@ from cagg.scrapework.seo import *
 from cagg.scrapework.ndtv import *
 from cagg.scrapework.tech import *
 
+from rake_nltk import Rake
+
 import nltk
 import requests
 from nltk.corpus import stopwords
@@ -54,6 +56,13 @@ def price(request):
 			pass	
 
 		cont={}
+
+		r=Rake()
+		r.extract_keywords_from_text(result)
+		hh=r.get_ranked_phrases()[0:10]
+		phr={}
+		phr['0']=hh
+
 		for x in range(10):
 			Keymax = max(frequency_table, key= lambda x: frequency_table[x])
 			li=[]
@@ -63,7 +72,7 @@ def price(request):
 			cont[str(x)]=li
 			del frequency_table[Keymax]
 
-		return render(request,'price.html',{"count":cont,"n":range(10)})
+		return render(request,'price.html',{"count":cont,"n":range(10),"phr":phr})
 	
 	return render(request,'price.html')
 def history(request):
